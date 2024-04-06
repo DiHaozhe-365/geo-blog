@@ -1,6 +1,6 @@
 <script name="app" lang="ts" setup>
 useSeoMeta({
-    title: "GeoBlog",
+    title: "邸浩哲Geo - 热爱可抵岁月漫长",
     description: "热爱可抵岁月漫长",
     keywords: "GeoBlog,邸浩哲,邸浩哲Geo",
 })
