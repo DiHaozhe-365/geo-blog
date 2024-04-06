@@ -5,5 +5,10 @@ export default defineNuxtConfig({
   // 开启 Nuxt 调试工具
   devtools: { enabled: true },
   // 应用模块
-  modules: ["@ant-design-vue/nuxt"],
+  // modules: ["@ant-design-vue/nuxt"],
+  modules: ["@ant-design-vue/nuxt", "@pinia/nuxt"],
+  // 配置 ant-design-vue
+  antd: {
+    extractStyle: true,
+  },
 })

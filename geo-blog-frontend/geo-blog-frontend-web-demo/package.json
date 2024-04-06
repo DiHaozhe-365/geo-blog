@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@ant-design-vue/nuxt": "^1.4.1",
+    "@pinia/nuxt": "^0.5.1",
     "sass": "^1.74.1"
   }
 }

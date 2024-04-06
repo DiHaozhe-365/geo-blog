@@ -3,7 +3,8 @@
 <template>
     <div class="index">
         index
-        <div class="item"></div>
+
+        <a-button @click="">点我弹窗</a-button>
     </div>
 </template>
 
