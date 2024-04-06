@@ -1,4 +1,4 @@
-<script name="app" lang="ts" setup>
+<script lang="ts" setup>
 useSeoMeta({
     title: "邸浩哲Geo - 热爱可抵岁月漫长",
     description: "热爱可抵岁月漫长",
