@@ -1,8 +1,8 @@
 <script name="app" lang="ts" setup>
 useSeoMeta({
-    title: "交大软件工程助手",
-    description: "更适合 DJTU 软件工程学生体质的学习平台",
-    keywords: "大连,交通大学,软件工程,DJTU",
+    title: "GeoBlog",
+    description: "热爱可抵岁月漫长",
+    keywords: "GeoBlog,邸浩哲,邸浩哲Geo",
 })
 </script>
 
@@ -23,7 +23,7 @@ useSeoMeta({
         background-color: var(--hao-background);
     }
 }
-// // 设置 Vant 全局变量
+// 设置 Vant 全局变量
 :root {
     --van-primary-color: rgb(0, 122, 255) !important;
 }
