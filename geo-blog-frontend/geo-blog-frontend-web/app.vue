@@ -8,6 +8,7 @@ useSeoMeta({
 
 <template>
     <div class="app">
+        <a-button type="primary">测试</a-button>
         <NuxtLink to="/">首页</NuxtLink>
         <NuxtLink to="/about">关于</NuxtLink>
         <NuxtPage />
@@ -23,8 +24,8 @@ useSeoMeta({
         background-color: var(--hao-background);
     }
 }
-// 设置 Vant 全局变量
+// 设置全局变量
 :root {
-    --van-primary-color: rgb(0, 122, 255) !important;
+    // --van-primary-color: rgb(0, 122, 255) !important;
 }
 </style>

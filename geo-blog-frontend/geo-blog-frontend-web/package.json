@@ -10,12 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@vant/nuxt": "^1.0.4",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@ant-design-vue/nuxt": "^1.4.1",
     "sass": "^1.74.1"
   }
 }

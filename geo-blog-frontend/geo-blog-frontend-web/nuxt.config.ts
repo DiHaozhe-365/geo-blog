@@ -5,5 +5,5 @@ export default defineNuxtConfig({
   // 开启 Nuxt 调试工具
   devtools: { enabled: true },
   // 应用模块
-  modules: ['@vant/nuxt']
+  modules: ["@ant-design-vue/nuxt"],
 })
