@@ -82,7 +82,7 @@ const bannerTitle = ref({
       justify-content: center;
       align-items: flex-start;
       margin-left: 15%;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 300;
       @include useTheme {
         color: var(--geo-font-color);

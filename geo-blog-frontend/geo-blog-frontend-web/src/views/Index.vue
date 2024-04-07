@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import Banner from '@/components/index/Banner.vue'
+import Hero from '@/components/index/Hero.vue'
 </script>
 
 <template>
   <div class="home">
     <div class="banners">
       <Banner></Banner>
+      <Hero></Hero>
     </div>
   </div>
 </template>
