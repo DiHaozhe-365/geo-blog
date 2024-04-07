@@ -13,12 +13,12 @@ const systemStore = useSystemStore()
         <RouterLink to="/">
           <img
             v-if="systemStore.theme === 'light'"
-            src="@/assets/images/logo-light.svg"
+            src="@/assets/images/svg/GEO-light.svg"
             alt="HAO Logo"
           />
           <img
             v-if="systemStore.theme === 'dark'"
-            src="@/assets/images/logo-dark.svg"
+            src="@/assets/images/svg/GEO-dark.svg"
             alt="HAO Logo"
           />
         </RouterLink>
@@ -34,14 +34,14 @@ const systemStore = useSystemStore()
           v-if="systemStore.theme === 'light'"
           @click="useChangeTheme('dark')"
         >
-          <img src="@/assets/images/change-theme-light.svg" alt="Change Theme Light" />
+          <img src="@/assets/images/svg/change-theme-light.svg" alt="Change Theme Light" />
         </div>
         <div
           class="header-right-item"
           v-if="systemStore.theme === 'dark'"
           @click="useChangeTheme('light')"
         >
-          <img src="@/assets/images/change-theme-dark.svg" alt="Change Theme Dark" />
+          <img src="@/assets/images/svg/change-theme-dark.svg" alt="Change Theme Dark" />
         </div>
       </div>
     </div>
