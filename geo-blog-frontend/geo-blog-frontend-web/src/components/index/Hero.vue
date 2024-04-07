@@ -18,7 +18,7 @@ import { ref } from 'vue'
   aspect-ratio: 16/9;
   border-radius: var(--geo-card-border-radius);
   display: flex;
-  animation: slidein 0.6s 0.2s backwards;
+  animation: slidein 0.6s 0.1s backwards;
   @include useTheme {
     background: var(--geo-card-bg);
     border: 1px solid var(--geo-card-border);

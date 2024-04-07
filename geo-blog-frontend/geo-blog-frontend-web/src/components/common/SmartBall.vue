@@ -73,7 +73,7 @@ const props = defineProps(['message'])
     }
     span {
       margin: 0 10px;
-      animation: innerBallTextSpan 1.6s ease forwards;
+      animation: innerBallTextSpan 1s ease forwards;
       user-select: none;
     }
   }
@@ -125,6 +125,10 @@ const props = defineProps(['message'])
     padding: 0;
     display: none;
   }
+  70% {
+    width: 100%;
+    display: flex;
+  }
   100% {
     width: 100%;
     display: flex;
@@ -135,7 +139,7 @@ const props = defineProps(['message'])
     opacity: 0;
     display: none;
   }
-  40% {
+  10% {
     opacity: 0;
     display: block;
   }
