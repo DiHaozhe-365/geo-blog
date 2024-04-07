@@ -1,0 +1,7 @@
+@import './theme.scss';
+
+body {
+  @include useTheme {
+    background-color: var(--hao-background);
+  }
+}
