@@ -26,7 +26,9 @@ const systemStore = useSystemStore()
       <nav class="header-middle">
         <RouterLink class="header-middle-item" to="/post">文 章</RouterLink>
         <RouterLink class="header-middle-item" to="/note">笔 记</RouterLink>
-        <RouterLink class="header-middle-item" to="/my">我 的</RouterLink>
+        <RouterLink class="header-middle-item" to="/tutorial">教 程</RouterLink>
+        <RouterLink class="header-middle-item" to="/service">服 务</RouterLink>
+        <RouterLink class="header-middle-item" to="/about">关 于</RouterLink>
       </nav>
       <div class="header-right">
         <div
@@ -52,6 +54,7 @@ const systemStore = useSystemStore()
 @import '@/assets/styles/theme';
 
 .header {
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
@@ -61,9 +64,10 @@ const systemStore = useSystemStore()
   justify-content: center;
   align-items: center;
   transition: 0.3s;
+  backdrop-filter: saturate(180%) blur(20px);
   @include useTheme {
-    background: var(--hao-card-bg);
-    outline: 1px solid var(--hao-card-border);
+    background: var(--geo-card-bg-70);
+    outline: 1px solid var(--geo-card-border);
   }
   .header-content {
     max-width: 1400px;
@@ -94,8 +98,8 @@ const systemStore = useSystemStore()
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 10px 15px;
-        border-radius: 20px;
+        padding: 8px 13px;
+        border-radius: 18px;
         margin: 0 5px;
         user-select: none;
         text-decoration: none;
@@ -104,12 +108,12 @@ const systemStore = useSystemStore()
         background: none;
         @include useTheme {
           font-weight: 500;
-          color: var(--hao-font-color);
+          color: var(--geo-font-color);
         }
         &:hover {
           @include useTheme {
-            color: var(--hao-font-color-hover);
-            background: var(--hao-theme);
+            color: var(--geo-font-color-hover);
+            background: var(--geo-theme);
           }
         }
         &:active {
@@ -132,7 +136,7 @@ const systemStore = useSystemStore()
         cursor: pointer;
         &:hover {
           @include useTheme {
-            background: var(--hao-card-border);
+            background: var(--geo-card-border);
           }
         }
       }

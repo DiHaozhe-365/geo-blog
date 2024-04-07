@@ -27,6 +27,7 @@ document.getElementsByTagName('html')[0].dataset.theme = systemStore.theme
 .content-wrapper {
   padding-top: 80px;
   width: 100%;
+  height: 5000px;
   display: flex;
   justify-content: center;
   .content {

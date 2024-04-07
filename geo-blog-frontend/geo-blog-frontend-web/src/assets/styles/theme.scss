@@ -1,28 +1,60 @@
+// 通用变量
+$geo-button-border-radius: 8px;
+$geo-card-border-radius: 12px;
+
+@keyframes slidein {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 $themes: (
   // 浅色模式
   light:
     (
       // 颜色变量
-      --hao-theme: rgb(0, 122, 255),
-      --hao-background: rgb(235, 235, 235),
-      --hao-card-bg: rgb(255, 255, 255),
-      --hao-card-bg-60: rgb(255, 255, 255, 0.6),
-      --hao-card-border: rgb(227, 227, 227),
-      --hao-font-color: rgb(14, 14, 14),
-      --hao-font-color-hover: rgb(241, 241, 241)
+      --geo-theme: rgb(0, 122, 255),
+      --geo-background: rgb(245, 245, 247),
+      --geo-card-bg: rgb(255, 255, 255),
+      --geo-card-bg-70: rgba(255, 255, 255, 0.7),
+      --geo-card-border: rgb(208, 215, 222),
+      --geo-font-color: #363636,
+      --geo-font-color-hover: rgb(241, 241, 241),
+      // 按钮变量
+      --geo-button-border-radius: $geo-button-border-radius,
+      // 卡片变量
+      --geo-card-border-radius: $geo-card-border-radius,
+
+      // SmartBall变量
+      --geo-smart-ball-bg: rgba(247, 247, 247, 0.7),
+      --end: none
     ),
 
   // 深色模式
   dark:
     (
       // 颜色变量
-      --hao-theme: rgb(255, 214, 10),
-      --hao-background: rgb(36, 39, 46),
-      --hao-card-bg: rgb(27, 28, 29),
-      --hao-card-bg-60: rgb(27, 28, 29, 0.6),
-      --hao-card-border: rgb(61, 61, 61),
-      --hao-font-color: rgb(241, 241, 241),
-      --hao-font-color-hover: rgb(14, 14, 14)
+      --geo-theme: rgb(246, 203, 48),
+      --geo-background: rgb(36, 39, 43),
+      --geo-card-bg: rgb(27, 28, 29),
+      --geo-card-bg-70: rgba(27, 28, 29, 0.7),
+      --geo-card-border: rgb(61, 61, 61),
+      --geo-font-color: rgb(241, 241, 241),
+      --geo-font-color-hover: rgb(14, 14, 14),
+      // 按钮变量
+      --geo-button-border-radius: $geo-button-border-radius,
+      // 卡片变量
+      --geo-card-border-radius: $geo-card-border-radius,
+
+      // SmartBall变量
+      --geo-smart-ball-bg: rgb(66 66 69 / 70%),
+      --end: none
     )
 );
 

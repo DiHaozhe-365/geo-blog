@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAccountStore } from '@/stores/account'
-import Home from '@/views/Home.vue'
+import Index from '@/views/Index.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
 import Post from '@/views/Post.vue'
@@ -12,8 +12,8 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'index',
+      component: Index
     },
     {
       path: '/login',

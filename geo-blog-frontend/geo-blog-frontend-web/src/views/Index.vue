@@ -1,17 +1,25 @@
 <script lang="ts" setup>
-import Banner from '@/components/home/Banner.vue'
+import Banner from '@/components/index/Banner.vue'
 </script>
 
 <template>
   <div class="home">
     <div class="banners">
       <Banner></Banner>
-      <Banner></Banner>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.test {
+  position: absolute;
+  bottom: 100px;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @import '@/assets/styles/theme';
 .home {
   width: 100%;
@@ -21,7 +29,6 @@ import Banner from '@/components/home/Banner.vue'
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
   }
 }

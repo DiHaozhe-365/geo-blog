@@ -44,8 +44,8 @@ const handleLogin = async () => {
   align-items: center;
   gap: 18px;
   @include useTheme {
-    background: var(--hao-card-bg);
-    border: 1px solid var(--hao-card-border);
+    background: var(--geo-card-bg);
+    border: 1px solid var(--geo-card-border);
   }
   .title {
     width: 70%;
@@ -53,14 +53,14 @@ const handleLogin = async () => {
     font-weight: 700;
     user-select: none;
     @include useTheme {
-      color: var(--hao-font-color);
+      color: var(--geo-font-color);
     }
   }
   .sub-title {
     width: 70%;
     font-size: 14px;
     @include useTheme {
-      color: var(--hao-font-color);
+      color: var(--geo-font-color);
     }
   }
   .form {
@@ -87,8 +87,8 @@ const handleLogin = async () => {
       cursor: pointer;
       @include useTheme {
         font-weight: 500;
-        color: var(--hao-font-color-hover);
-        background: var(--hao-theme);
+        color: var(--geo-font-color-hover);
+        background: var(--geo-theme);
       }
       &:active {
         transform: scale(98%);
