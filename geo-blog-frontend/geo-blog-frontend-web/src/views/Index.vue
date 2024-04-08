@@ -18,7 +18,7 @@ import Carousel from '@/components/index/Carousel.vue'
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0 3rem;
+  align-items: center;
   .banners {
     width: 100%;
     display: flex;

@@ -36,6 +36,8 @@ document.getElementsByTagName('html')[0].dataset.theme = systemStore.theme
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 0 3rem;
+    overflow: hidden;
   }
 }
 </style>
