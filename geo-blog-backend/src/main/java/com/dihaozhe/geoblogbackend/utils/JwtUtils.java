@@ -98,8 +98,8 @@ public class JwtUtils {
     }
 
     // 使Jwt失效
-    public boolean invalidateJwt(String headrToken) {
-        String token = this.convertToken(headrToken);
+    public boolean invalidateJwt(String headerToken) {
+        String token = this.convertToken(headerToken);
         if (token == null) {
             return false;
         }
