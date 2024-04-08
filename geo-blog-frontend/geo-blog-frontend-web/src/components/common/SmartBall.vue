@@ -42,6 +42,7 @@ const props = defineProps(['message'])
     animation: innerBall 0.8s ease forwards;
     @include useTheme {
       background: var(--geo-smart-ball-bg);
+      border: 1px solid var(--geo-card-border);
     }
   }
   .inner-ball-text {
@@ -83,7 +84,7 @@ const props = defineProps(['message'])
   0% {
     width: 0;
     height: 0;
-    transform: translateY(80px);
+    transform: translateY(120px);
   }
   100% {
     width: 52px;
@@ -97,9 +98,9 @@ const props = defineProps(['message'])
   0% {
     width: 0;
     height: 0;
-    transform: translateY(80px);
+    transform: translateY(120px);
   }
-  15% {
+  35% {
     width: 0px;
     height: 0px;
   }

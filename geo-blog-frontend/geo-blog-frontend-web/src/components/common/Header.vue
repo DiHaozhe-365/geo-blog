@@ -24,11 +24,12 @@ const systemStore = useSystemStore()
         </RouterLink>
       </div>
       <nav class="header-middle">
-        <RouterLink class="header-middle-item" to="/post">文 章</RouterLink>
-        <RouterLink class="header-middle-item" to="/note">笔 记</RouterLink>
-        <RouterLink class="header-middle-item" to="/tutorial">教 程</RouterLink>
-        <RouterLink class="header-middle-item" to="/service">服 务</RouterLink>
-        <RouterLink class="header-middle-item" to="/about">关 于</RouterLink>
+        <RouterLink class="header-middle-item" to="/">首页</RouterLink>
+        <RouterLink class="header-middle-item" to="/post">文章</RouterLink>
+        <RouterLink class="header-middle-item" to="/note">笔记</RouterLink>
+        <RouterLink class="header-middle-item" to="/tutorial">教程</RouterLink>
+        <RouterLink class="header-middle-item" to="/service">服务</RouterLink>
+        <RouterLink class="header-middle-item" to="/about">关于</RouterLink>
       </nav>
       <div class="header-right">
         <div

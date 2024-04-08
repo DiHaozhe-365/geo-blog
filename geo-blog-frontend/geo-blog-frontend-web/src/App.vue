@@ -25,11 +25,10 @@ document.getElementsByTagName('html')[0].dataset.theme = systemStore.theme
 
 <style lang="scss" scoped>
 @import '@/assets/styles/theme';
-
 .content-wrapper {
   padding-top: 80px;
   width: 100%;
-  height: 5000px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   .content {
@@ -37,7 +36,6 @@ document.getElementsByTagName('html')[0].dataset.theme = systemStore.theme
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0 3rem;
   }
 }
 </style>

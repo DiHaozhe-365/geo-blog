@@ -3,15 +3,15 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div class="hero">
-    <div class="hero-left"></div>
-    <div class="hero-right"></div>
+  <div class="carousel">
+    <div class="carousel-left"></div>
+    <div class="carousel-right"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/styles/theme';
-.hero {
+.carousel {
   min-width: 652px;
   max-width: 690px;
   flex: 1;
@@ -23,12 +23,12 @@ import { ref } from 'vue'
     background: var(--geo-card-bg);
     border: 1px solid var(--geo-card-border);
   }
-  .hero-left {
+  .carousel-left {
     width: 50%;
     height: 100%;
     display: flex;
   }
-  .hero-right {
+  .carousel-right {
     width: 50%;
     height: 100%;
     display: flex;
