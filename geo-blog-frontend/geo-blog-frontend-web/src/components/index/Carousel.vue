@@ -2,8 +2,8 @@
 
 <template>
   <div class="carousel">
-    <div class="carousel-left"></div>
-    <div class="carousel-right"></div>
+    <div class="carousel-left-button"></div>
+    <div class="carousel-right-button"></div>
   </div>
 </template>
 
@@ -21,12 +21,12 @@
     background: var(--geo-card-bg);
     border: 1px solid var(--geo-card-border);
   }
-  .carousel-left {
+  .carousel-left-button {
     width: 50%;
     height: 100%;
     display: flex;
   }
-  .carousel-right {
+  .carousel-right-button {
     width: 50%;
     height: 100%;
     display: flex;

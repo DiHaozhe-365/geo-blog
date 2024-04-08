@@ -1,0 +1,32 @@
+$breakpoints: (
+  'phone': (
+    320px,
+    480px
+  ),
+  'pad': (
+    481px,
+    768px
+  ),
+  'notebook': (
+    769px,
+    1024px
+  ),
+  'desktop': (
+    1025px,
+    1200px
+  ),
+  'tv': 1201px
+);
+
+@mixin responseTo($breakname) {
+  $bp: map-get($breakpoints, $breakname);
+  @if type-of($bp) == 'list' {
+    @media (min-width: nth($bp, 1)) and (max-width: nth($bp, 2)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: nth($bp)) {
+      @content;
+    }
+  }
+}

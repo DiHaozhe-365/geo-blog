@@ -34,6 +34,7 @@ const bannerTitle = ref({
 
 <style lang="scss" scoped>
 @import '@/assets/styles/theme';
+@import '@/assets/styles/layout';
 .banner {
   min-width: 652px;
   max-width: 690px;
@@ -45,6 +46,8 @@ const bannerTitle = ref({
   @include useTheme {
     background: var(--geo-card-bg);
     border: 1px solid var(--geo-card-border);
+  }
+  @include responseTo('phone') {
   }
   .banner-left {
     width: 50%;
