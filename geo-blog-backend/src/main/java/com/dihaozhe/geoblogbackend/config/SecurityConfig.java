@@ -7,7 +7,6 @@ import com.dihaozhe.geoblogbackend.service.AccountService;
 import com.dihaozhe.geoblogbackend.utils.JwtUtils;
 import com.dihaozhe.common.response.Result;
 import jakarta.annotation.Resource;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.BeanUtils;
@@ -115,7 +114,7 @@ public class SecurityConfig {
     // 权限不足
     public void onAccessDeny(HttpServletRequest request,
                              HttpServletResponse response,
-                             AccessDeniedException accessDeniedException) throws IOException, ServletException {
+                             AccessDeniedException accessDeniedException) throws IOException {
         response.setContentType("application/json;charset=utf-8");
         response.getWriter().write(Result.forbidden(accessDeniedException.getMessage()).toJSON());
     }
