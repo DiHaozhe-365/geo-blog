@@ -1,4 +1,4 @@
-package com.dihaozhe.haoblogbackend.pojo.entity;
+package com.dihaozhe.geoblogbackend.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

@@ -1,7 +1,7 @@
 package com.dihaozhe.geoblogbackend.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.dihaozhe.haoblogbackend.pojo.entity.Account;
+import com.dihaozhe.geoblogbackend.pojo.entity.Account;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface AccountService extends IService<Account>, UserDetailsService {

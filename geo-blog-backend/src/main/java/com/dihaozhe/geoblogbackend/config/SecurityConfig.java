@@ -1,7 +1,7 @@
 package com.dihaozhe.geoblogbackend.config;
 
 import com.dihaozhe.geoblogbackend.filter.JwtAuthorizeFilter;
-import com.dihaozhe.haoblogbackend.pojo.entity.Account;
+import com.dihaozhe.geoblogbackend.pojo.entity.Account;
 import com.dihaozhe.geoblogbackend.pojo.vo.response.AuthorizeVO;
 import com.dihaozhe.geoblogbackend.service.AccountService;
 import com.dihaozhe.geoblogbackend.utils.JwtUtils;
