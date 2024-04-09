@@ -18,7 +18,10 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-
+#SQL 日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 # GeoBlog 配置
 geo-blog:
   version: 1.0.0
