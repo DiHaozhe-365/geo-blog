@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router'
 import { useSystemStore } from '@/stores/system'
 import Header from '@/components/common/Header.vue'
 import Footer from '@/components/common/Footer.vue'
+import Demo from '@/components/demo/Demo.vue'
 
 // 获取网站当前主题，如果为空则设置默认系统主题
 const systemStore = useSystemStore()
@@ -21,16 +22,19 @@ document.getElementsByTagName('html')[0].dataset.theme = systemStore.theme
     </div>
   </div>
   <Footer></Footer>
+  <Demo></Demo>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/styles/theme';
+
 .content-wrapper {
   padding-top: 80px;
   width: 100%;
   height: 5000px;
   display: flex;
   justify-content: center;
+
   .content {
     max-width: 1400px;
     width: 100%;

@@ -3,6 +3,8 @@ spring:
   application:
     name: geo-blog-backend
   security:
+    filter:
+      order: -100
     user:
       name: user
       password: 123456

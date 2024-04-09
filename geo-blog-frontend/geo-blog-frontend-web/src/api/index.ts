@@ -1,6 +1,6 @@
 // api
-import request from '@/utils/request'
-import { useAccountStore } from '@/stores/account'
+import request from "@/utils/request";
+import { useAccountStore } from "@/stores/account";
 
 // 参数接口
 export interface LoginParams {
@@ -26,6 +26,32 @@ export const login = async (params: LoginParams) => {
       accontStore.expire = response.data.expire
     }
     return response
+  } catch (error: any) {
+    console.log(error.message)
+    throw error
+  }
+}
+
+/**
+ * 获取用户列表接口
+ * @returns
+ */
+export const getAccountList = async () => {
+  try {
+    return await request.get('/api/account/list')
+  } catch (error: any) {
+    console.log(error.message)
+    throw error
+  }
+}
+
+/**
+ * 获取你好接口
+ * @returns
+ */
+export const getHello = async () => {
+  try {
+    return await request.get('/api/test/hello')
   } catch (error: any) {
     console.log(error.message)
     throw error

@@ -1,7 +1,9 @@
 // request.ts
+import type { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import axios from 'axios'
-import type { AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios'
 import config from '@/config'
+import { isExpired } from '@/utils/time'
+import { useRemoveAccount } from '@/stores/account'
 
 export interface Response {
   code: number
@@ -15,6 +17,14 @@ export interface RequestOptions {
   params?: any
   data?: any
   headers?: any
+}
+
+export interface Account {
+  username: string
+  password: string
+  role: string
+  token: string
+  expire: string
 }
 
 class Request {
@@ -34,7 +44,26 @@ class Request {
   private handleRequestIntercept(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
     // 修改请求头中的Content-Type为'application/x-www-form-urlencoded'
     config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-    // 设置Token
+    // 尝试从本地存储中获取Token信息
+    const account: string =
+      localStorage.getItem('account') ||
+      sessionStorage.getItem('account') ||
+      '{"token":"","expire":""}'
+    const accountJSON: Account = JSON.parse(account)
+    const token: string = accountJSON.token || ''
+    const expire: string = accountJSON.expire || ''
+    // 判断该Token是否存在
+    if (token !== '') {
+      //判断该Token是否过期
+      if (!isExpired(expire)) {
+        // 未过期，写入请求头
+        config.headers['Authorization'] = 'Bearer ' + token
+      } else {
+        // 已过期，清除Account
+        useRemoveAccount()
+      }
+    }
+    useRemoveAccount()
     return config
   }
 

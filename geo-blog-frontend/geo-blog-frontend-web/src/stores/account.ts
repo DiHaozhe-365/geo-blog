@@ -14,3 +14,14 @@ export const useAccountStore = defineStore(
     persist: true
   }
 )
+
+// 清除本地Account登录状态钩子
+export const useRemoveAccount = () => {
+  const accountStore = useAccountStore()
+  accountStore.username = ''
+  accountStore.role = ''
+  accountStore.token = ''
+  accountStore.expire = ''
+  localStorage.removeItem('account')
+  sessionStorage.removeItem('account')
+}
