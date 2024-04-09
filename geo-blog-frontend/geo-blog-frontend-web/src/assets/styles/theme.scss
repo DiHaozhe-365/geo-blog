@@ -2,18 +2,6 @@
 $geo-button-border-radius: 8px;
 $geo-card-border-radius: 12px;
 
-@keyframes slidein {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 $themes: (
   // 浅色模式
   light:

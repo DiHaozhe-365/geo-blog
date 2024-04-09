@@ -36,8 +36,8 @@ const bannerTitle = ref({
 @import '@/assets/styles/theme';
 @import '@/assets/styles/layout';
 .banner {
-  min-width: 652px;
   max-width: 690px;
+  width: 100%;
   flex: 1;
   aspect-ratio: 16/9;
   border-radius: var(--geo-card-border-radius);

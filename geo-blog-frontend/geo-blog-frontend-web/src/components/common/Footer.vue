@@ -22,8 +22,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include useTheme() {
-    background: var(--geo-card-bg);
+  @include useTheme {
+    background: var(--geo-card-bg-70);
     outline: 1px solid var(--geo-card-border);
   }
   .footer-content {
