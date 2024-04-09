@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import router from "@/router";
+import router from '@/router'
 
 const carouselList = ref([
   {
@@ -49,9 +49,7 @@ const startAutoPlay = () => {
     }
     currentImg.value = currentImg.value + 1
     for (let i = 0; i < carouselImgList.value.children.length; i++) {
-      if (carouselImgList.value.children[i].style.display == 'block') {
-        carouselImgList.value.children[i].style.display = 'none'
-      }
+      carouselImgList.value.children[i].style.display = 'none'
     }
     carouselImgList.value.children[currentImg.value - 1].style.display = 'block'
   }, 4000)
@@ -66,9 +64,7 @@ const nextImg = () => {
   }
   currentImg.value = currentImg.value + 1
   for (let i = 0; i < carouselImgList.value.children.length; i++) {
-    if (carouselImgList.value.children[i].style.display == 'block') {
-      carouselImgList.value.children[i].style.display = 'none'
-    }
+    carouselImgList.value.children[i].style.display = 'none'
   }
   carouselImgList.value.children[currentImg.value - 1].style.display = 'block'
   startAutoPlay()
@@ -82,9 +78,7 @@ const lastImg = () => {
   }
   currentImg.value = currentImg.value - 1
   for (let i = 0; i < carouselImgList.value.children.length; i++) {
-    if (carouselImgList.value.children[i].style.display == 'block') {
-      carouselImgList.value.children[i].style.display = 'none'
-    }
+    carouselImgList.value.children[i].style.display = 'none'
   }
   carouselImgList.value.children[currentImg.value - 1].style.display = 'block'
   startAutoPlay()
@@ -95,9 +89,7 @@ const toImg = (id: number) => {
   clearInterval(autoPlay)
   currentImg.value = id
   for (let i = 0; i < carouselImgList.value.children.length; i++) {
-    if (carouselImgList.value.children[i].style.display == 'block') {
-      carouselImgList.value.children[i].style.display = 'none'
-    }
+    carouselImgList.value.children[i].style.display = 'none'
   }
   carouselImgList.value.children[id - 1].style.display = 'block'
   startAutoPlay()
@@ -112,14 +104,24 @@ const linkTo = (path: string) => {
 <template>
   <div class="carousel">
     <div ref="carouselImgList" class="carousel-img-list">
-      <div class="carousel-img" v-for="(carousel, index) in carouselList" :key="index" @click="linkTo(carousel.link)">
-        <span v-if="carousel.title !==''" class="carousel-title">{{carousel.title}}</span>
-        <img :src="carousel.img" alt="carousel img" draggable="false"/>
+      <div
+        class="carousel-img"
+        v-for="(carousel, index) in carouselList"
+        :key="index"
+        @click="linkTo(carousel.link)"
+      >
+        <span v-if="carousel.title !== ''" class="carousel-title">{{ carousel.title }}</span>
+        <img :src="carousel.img" alt="carousel img" draggable="false" />
       </div>
     </div>
     <div class="carousel-points">
       <ul>
-        <li v-for="(point, index) in carouselList" :key="index" @click="toImg(index + 1)" :class="{ active: currentImg === index + 1 }"></li>
+        <li
+          v-for="(point, index) in carouselList"
+          :key="index"
+          @click="toImg(index + 1)"
+          :class="{ active: currentImg === index + 1 }"
+        ></li>
       </ul>
     </div>
     <div class="carousel-left-button" @click="lastImg">◀</div>
