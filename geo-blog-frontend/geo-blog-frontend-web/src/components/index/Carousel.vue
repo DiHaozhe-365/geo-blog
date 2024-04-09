@@ -131,6 +131,7 @@ const linkTo = (path: string) => {
 
 <style lang="scss" scoped>
 @import '@/assets/styles/theme';
+
 .carousel {
   position: relative;
   min-width: 652px;
@@ -147,10 +148,12 @@ const linkTo = (path: string) => {
     background: var(--geo-card-bg);
     border: 1px solid var(--geo-card-border);
   }
+
   .carousel-img-list {
     width: 100%;
     height: 100%;
     position: relative;
+
     .carousel-img {
       position: absolute;
       top: 0;
@@ -159,9 +162,11 @@ const linkTo = (path: string) => {
       height: 100%;
       display: none;
       transition: all 1s;
+
       &:nth-child(1) {
         display: block;
       }
+
       img {
         width: 100%;
         height: 100%;
@@ -171,6 +176,7 @@ const linkTo = (path: string) => {
         -ms-user-select: none;
         -khtml-user-select: none;
       }
+
       .carousel-title {
         position: absolute;
         bottom: 20px;
@@ -188,6 +194,7 @@ const linkTo = (path: string) => {
           background: var(--geo-card-bg-70);
           border: 1px solid var(--geo-card-border);
         }
+
         &:hover {
           @include useTheme {
             color: var(--geo-font-color-hover);
@@ -198,12 +205,14 @@ const linkTo = (path: string) => {
       }
     }
   }
+
   .carousel-points {
     position: absolute;
     bottom: 20px;
     right: 20px;
     display: flex;
     justify-content: center;
+
     ul {
       padding: 0;
       margin: 0;
@@ -212,6 +221,7 @@ const linkTo = (path: string) => {
       justify-content: center;
       align-items: flex-end;
       gap: 10px;
+
       li {
         width: 10px;
         height: 10px;
@@ -222,6 +232,7 @@ const linkTo = (path: string) => {
         @include useTheme {
           border: 1px solid var(--geo-card-border);
         }
+
         &:hover {
           @include useTheme {
             width: 15px;
@@ -229,10 +240,12 @@ const linkTo = (path: string) => {
             background: var(--geo-font-hover);
           }
         }
+
         @include useTheme {
           background: var(--geo-card-border);
         }
       }
+
       .active {
         @include useTheme {
           background: var(--geo-theme);
@@ -240,6 +253,7 @@ const linkTo = (path: string) => {
       }
     }
   }
+
   .carousel-left-button {
     position: absolute;
     left: 0;
@@ -259,6 +273,7 @@ const linkTo = (path: string) => {
       background: var(--geo-card-border);
       color: var(--geo-font-color);
     }
+
     &:hover {
       width: 50px;
       height: 50px;
@@ -269,10 +284,12 @@ const linkTo = (path: string) => {
         color: var(--geo-font-color-hover);
       }
     }
+
     &:active {
       width: 40px;
     }
   }
+
   .carousel-right-button {
     position: absolute;
     right: 0;
@@ -292,6 +309,7 @@ const linkTo = (path: string) => {
       background: var(--geo-card-border);
       color: var(--geo-font-color);
     }
+
     &:hover {
       width: 50px;
       height: 50px;
@@ -302,6 +320,7 @@ const linkTo = (path: string) => {
         color: var(--geo-font-color-hover);
       }
     }
+
     &:active {
       width: 40px;
     }
