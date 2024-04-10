@@ -1,7 +1,7 @@
 // api
 import request from '@/utils/request'
 import { message } from 'ant-design-vue'
-import { useAccountStore } from '@/stores/account'
+import { useAccountStore, useRemoveAccount } from '@/stores/account'
 
 export interface Response {
   code: number
@@ -36,7 +36,6 @@ export const login = async (params: LoginParams) => {
   try {
     const response = await request.post('/api/auth/login', params)
     if (response.code === 200) {
-      message.success('登录成功')
       const accontStore = useAccountStore()
       accontStore.username = response.data.username
       accontStore.role = response.data.role
@@ -55,6 +54,25 @@ export const login = async (params: LoginParams) => {
         // 未勾选记住我，将存储在本地存储空间的登录状态清除
         localStorage.removeItem('account')
       }
+    } else {
+      defaultWarning(response)
+    }
+  } catch (error: any) {
+    defaultError()
+    console.log(error)
+    throw error
+  }
+}
+
+/**
+ * 退出登录接口
+ * @returns
+ */
+export const logout = async () => {
+  try {
+    const response = await request.get('/api/auth/logout')
+    if (response.code === 200) {
+      useRemoveAccount()
     } else {
       defaultWarning(response)
     }

@@ -1,8 +1,13 @@
 <script lang="ts" setup>
-import { getAccountList, getHello, login } from '@/api'
+import { getAccountList, getHello, login, logout } from '@/api'
 
 async function handleLogin() {
   await login({ username: 'admin', password: '123456', remember: false })
+}
+
+async function handleLogout() {
+  const response = await logout()
+  console.log(response)
 }
 
 async function handleList() {
@@ -19,6 +24,7 @@ async function handleHello() {
 <template>
   <div class="demo">
     <button @click="handleLogin">登 录</button>
+    <button @click="handleLogout">退出登录</button>
     <button @click="handleList">获取列表</button>
     <button @click="handleHello">获取你好</button>
   </div>
@@ -31,8 +37,8 @@ async function handleHello() {
   position: absolute;
   top: 50%;
   left: 50%;
-  display: block;
   display: none;
+  display: block;
 }
 
 button {

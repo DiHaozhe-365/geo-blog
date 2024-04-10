@@ -1,15 +1,56 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { ref } from 'vue'
+
+const categories = ref([
+  {
+    id: 1,
+    name: '全部'
+  },
+  {
+    id: 2,
+    name: '前端'
+  },
+  {
+    id: 3,
+    name: '后端'
+  },
+  {
+    id: 4,
+    name: '安卓'
+  },
+  {
+    id: 5,
+    name: 'iOS'
+  },
+  {
+    id: 6,
+    name: '人工智能'
+  },
+  {
+    id: 7,
+    name: '开发工具'
+  }
+])
+
+const activeCategoryName = ref('全部')
+
+const changeCategory = (name: string) => {
+  activeCategoryName.value = name
+}
+</script>
 
 <template>
   <div class="post-category">
     <div class="categories">
-      <div class="category active">全部</div>
-      <div class="category">前端</div>
-      <div class="category">后端</div>
-      <div class="category">安卓</div>
-      <div class="category">iOS</div>
-      <div class="category">人工智能</div>
-      <div class="category">开发工具</div>
+      <div
+        class="category"
+        v-for="category in categories"
+        :key="category.id"
+        :class="{ active: activeCategoryName === category.name }"
+        @click="changeCategory(category.name)"
+      >
+        {{ category.name }}
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +94,7 @@
 
       &:hover {
         @include useTheme {
+          background: var(--geo-font-color-hover);
           color: var(--geo-theme);
         }
       }
@@ -66,6 +108,12 @@
       @include useTheme {
         background: var(--geo-theme);
         color: var(--geo-card-bg) !important;
+      }
+
+      &:hover {
+        @include useTheme {
+          background: var(--geo-theme) !important;
+        }
       }
     }
   }
