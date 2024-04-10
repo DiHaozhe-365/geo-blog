@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="my"></div>
+  <div class="about"></div>
 </template>
 
 <style lang="scss" scoped>

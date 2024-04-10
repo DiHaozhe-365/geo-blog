@@ -35,10 +35,11 @@ const bannerTitle = ref({
 <style lang="scss" scoped>
 @import '@/assets/styles/theme';
 @import '@/assets/styles/layout';
+
 .banner {
   max-width: 690px;
+  min-width: 600px;
   width: 100%;
-  flex: 1;
   aspect-ratio: 16/9;
   border-radius: var(--geo-card-border-radius);
   display: flex;
@@ -49,6 +50,7 @@ const bannerTitle = ref({
   }
   @include responseTo('phone') {
   }
+
   .banner-left {
     width: 50%;
     height: 100%;
@@ -57,6 +59,7 @@ const bannerTitle = ref({
     justify-content: flex-start;
     align-items: flex-start;
     gap: 15px;
+
     .banner-title {
       display: flex;
       flex-direction: column;
@@ -64,6 +67,7 @@ const bannerTitle = ref({
       align-items: flex-start;
       margin-left: 15%;
       margin-top: 20%;
+
       .banner-title-first-line {
         font-size: 36px;
         font-weight: 700;
@@ -71,6 +75,7 @@ const bannerTitle = ref({
           color: var(--geo-font-color);
         }
       }
+
       .banner-title-second-line {
         font-size: 36px;
         font-weight: 700;
@@ -79,6 +84,7 @@ const bannerTitle = ref({
         }
       }
     }
+
     .banner-sub-title {
       display: flex;
       flex-direction: column;
@@ -91,6 +97,7 @@ const bannerTitle = ref({
         color: var(--geo-font-color);
       }
     }
+
     .banner-buttons {
       margin-left: 15%;
       margin-top: auto;
@@ -98,6 +105,7 @@ const bannerTitle = ref({
       width: 50%;
     }
   }
+
   .banner-right {
     width: 50%;
     height: 100%;

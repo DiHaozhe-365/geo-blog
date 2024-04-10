@@ -15,14 +15,22 @@ document.getElementsByTagName('html')[0].dataset.theme = systemStore.theme
 </script>
 
 <template>
-  <Header></Header>
-  <div class="content-wrapper">
-    <div class="content">
-      <RouterView />
+  <a-config-provider
+    :theme="{
+      token: {
+        colorPrimary: systemStore.theme === 'light' ? 'rgb(0, 122, 255)' : 'rgb(255, 216, 89)'
+      }
+    }"
+  >
+    <Header></Header>
+    <div class="content-wrapper">
+      <div class="content">
+        <RouterView />
+      </div>
     </div>
-  </div>
-  <Footer></Footer>
-  <Demo></Demo>
+    <Footer></Footer>
+    <Demo></Demo>
+  </a-config-provider>
 </template>
 
 <style lang="scss" scoped>

@@ -1,11 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAccountStore } from '@/stores/account'
 import Index from '@/views/Index.vue'
-import Login from '@/views/Login.vue'
-import Register from '@/views/Register.vue'
 import Post from '@/views/Post.vue'
 import Note from '@/views/Note.vue'
-import My from '@/views/My.vue'
+import Tutorial from '@/views/Tutorial.vue'
+import Service from '@/views/Service.vue'
+import Register from '@/views/Register.vue'
+import About from '@/views/About.vue'
+import Login from '@/views/Login.vue'
+import { message } from 'ant-design-vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,16 +17,6 @@ const router = createRouter({
       path: '/',
       name: 'index',
       component: Index
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/register',
-      name: 'register',
-      component: Register
     },
     {
       path: '/post',
@@ -36,9 +29,29 @@ const router = createRouter({
       component: Note
     },
     {
-      path: '/my',
-      name: 'my',
-      component: My
+      path: '/tutorial',
+      name: 'tutorial',
+      component: Tutorial
+    },
+    {
+      path: '/service',
+      name: 'service',
+      component: Service
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
     }
   ]
 })
@@ -53,7 +66,7 @@ router.beforeEach((to, from, next) => {
   ) {
     next()
   } else {
-    alert('您还没有登录，请先登录')
+    message.info('您还没有登录，请先登录')
     next('/login')
   }
 })

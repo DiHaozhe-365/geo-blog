@@ -4,46 +4,47 @@ $geo-card-border-radius: 12px;
 
 $themes: (
   // 浅色模式
-  light:
-    (
-      // 颜色变量
-      --geo-theme: rgb(0, 122, 255),
-      --geo-background: rgb(232, 232, 235),
-      --geo-card-bg: rgb(255, 255, 255),
-      --geo-card-bg-70: rgba(255, 255, 255, 0.7),
-      --geo-card-border: rgb(208, 215, 222),
-      --geo-font-color: #363636,
-      --geo-font-color-hover: rgb(241, 241, 241),
-      // 按钮变量
-      --geo-button-border-radius: $geo-button-border-radius,
-      // 卡片变量
-      --geo-card-border-radius: $geo-card-border-radius,
-
-      // SmartBall变量
-      --geo-smart-ball-bg: rgba(247, 247, 247, 0.7),
-      --end: none
-    ),
-
+        light:
+        (
+          // 颜色变量
+                --geo-theme: rgb(0, 122, 255),
+                --geo-background: rgb(232, 232, 235),
+                --geo-card-bg: rgba(255, 255, 255),
+                --geo-card-bg-70: rgba(255, 255, 255, 0.7),
+                --geo-card-border: rgb(208, 215, 222),
+                --geo-font-color: #363636,
+                --geo-font-color-hover: rgb(241, 241, 241),
+          // 按钮变量
+                --geo-button-border-radius: $geo-button-border-radius,
+          // 卡片变量
+                --geo-card-border-radius: $geo-card-border-radius,
+          // 输入框变量
+                --geo-input-bg: rgb(245, 246, 247),
+          // SmartBall变量
+                --geo-smart-ball-bg: rgba(247, 247, 247, 0.7),
+                --end: none
+        ),
   // 深色模式
-  dark:
-    (
-      // 颜色变量
-      --geo-theme: rgb(255, 216, 89),
-      --geo-background: rgb(36, 39, 43),
-      --geo-card-bg: rgb(27, 28, 29),
-      --geo-card-bg-70: rgba(27, 28, 29, 0.7),
-      --geo-card-border: rgb(61, 61, 61),
-      --geo-font-color: rgb(241, 241, 241),
-      --geo-font-color-hover: rgb(14, 14, 14),
-      // 按钮变量
-      --geo-button-border-radius: $geo-button-border-radius,
-      // 卡片变量
-      --geo-card-border-radius: $geo-card-border-radius,
-
-      // SmartBall变量
-      --geo-smart-ball-bg: rgb(66 66 69 / 70%),
-      --end: none
-    )
+        dark:
+        (
+          // 颜色变量
+                --geo-theme: rgb(255, 216, 89),
+                --geo-background: rgb(36, 39, 43),
+                --geo-card-bg: rgb(27, 28, 29),
+                --geo-card-bg-70: rgba(27, 28, 29, 0.7),
+                --geo-card-border: rgb(61, 61, 61),
+                --geo-font-color: rgb(241, 241, 241),
+                --geo-font-color-hover: rgb(14, 14, 14),
+          // 按钮变量
+                --geo-button-border-radius: $geo-button-border-radius,
+          // 卡片变量
+                --geo-card-border-radius: $geo-card-border-radius,
+          // 输入框变量
+                --geo-input-bg: rgb(84, 85, 86),
+          // SmartBall变量
+                --geo-smart-ball-bg: rgb(66 66 69 / 70%),
+                --end: none
+        )
 );
 
 $currentTheme: 'light';

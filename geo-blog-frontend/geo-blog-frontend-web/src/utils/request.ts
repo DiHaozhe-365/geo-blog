@@ -63,7 +63,6 @@ class Request {
         useRemoveAccount()
       }
     }
-    useRemoveAccount()
     return config
   }
 

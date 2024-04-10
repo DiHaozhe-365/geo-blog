@@ -2,8 +2,7 @@
 import { getAccountList, getHello, login } from '@/api'
 
 async function handleLogin() {
-  const response = await login({ username: 'admin', password: '123456' })
-  console.log(response)
+  await login({ username: 'admin', password: '123456', remember: false })
 }
 
 async function handleList() {
@@ -32,6 +31,8 @@ async function handleHello() {
   position: absolute;
   top: 50%;
   left: 50%;
+  display: block;
+  display: none;
 }
 
 button {

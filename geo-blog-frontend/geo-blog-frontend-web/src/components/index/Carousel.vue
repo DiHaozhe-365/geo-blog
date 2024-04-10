@@ -1,37 +1,45 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import router from '@/router'
+import { useSystemStore } from '@/stores/system'
+
+const systemStore = useSystemStore()
 
 const carouselList = ref([
   {
     id: 1,
     title: '',
     link: '/post/1',
-    img: '/src/assets/images/carousel/img.png'
+    imgLight: '/src/assets/images/carousel/img2.png',
+    imgDark: '/src/assets/images/carousel/img.png'
   },
   {
     id: 2,
     title: 'CSS',
     link: '/post/2',
-    img: '/src/assets/images/carousel/img2.png'
+    imgLight: '/src/assets/images/carousel/img2.png',
+    imgDark: '/src/assets/images/carousel/img.png'
   },
   {
     id: 3,
     title: 'JS',
     link: '/post/3',
-    img: '/src/assets/images/carousel/img3.png'
+    imgLight: '/src/assets/images/carousel/img2.png',
+    imgDark: '/src/assets/images/carousel/img.png'
   },
   {
     id: 4,
     title: 'TS',
     link: '/post/4',
-    img: '/src/assets/images/carousel/img4.png'
+    imgLight: '/src/assets/images/carousel/img2.png',
+    imgDark: '/src/assets/images/carousel/img.png'
   },
   {
     id: 5,
     title: 'Vue',
     link: '/post/5',
-    img: '/src/assets/images/carousel/img5.png'
+    imgLight: '/src/assets/images/carousel/img2.png',
+    imgDark: '/src/assets/images/carousel/img.png'
   }
 ])
 
@@ -54,7 +62,13 @@ const startAutoPlay = () => {
     carouselImgList.value.children[currentImg.value - 1].style.display = 'block'
   }, 4000)
 }
-startAutoPlay()
+onMounted(() => {
+  startAutoPlay()
+})
+
+onUnmounted(() => {
+  clearInterval(autoPlay)
+})
 
 // 下一张
 const nextImg = () => {
@@ -111,7 +125,18 @@ const linkTo = (path: string) => {
         @click="linkTo(carousel.link)"
       >
         <span v-if="carousel.title !== ''" class="carousel-title">{{ carousel.title }}</span>
-        <img :src="carousel.img" alt="carousel img" draggable="false" />
+        <img
+          v-if="systemStore.theme === 'light'"
+          :src="carousel.imgLight"
+          alt="carousel img"
+          draggable="false"
+        />
+        <img
+          v-if="systemStore.theme === 'dark'"
+          :src="carousel.imgDark"
+          alt="carousel img"
+          draggable="false"
+        />
       </div>
     </div>
     <div class="carousel-points">
@@ -134,9 +159,9 @@ const linkTo = (path: string) => {
 
 .carousel {
   position: relative;
-  min-width: 652px;
   max-width: 690px;
-  flex: 1;
+  min-width: 600px;
+  width: 100%;
   aspect-ratio: 16/9;
   border-radius: var(--geo-card-border-radius);
   display: flex;
@@ -258,7 +283,7 @@ const linkTo = (path: string) => {
     position: absolute;
     left: 0;
     width: 20px;
-    height: 80px;
+    height: 60px;
     font-size: 8px;
     border-radius: 0 50px 50px 0;
     display: flex;
@@ -276,7 +301,6 @@ const linkTo = (path: string) => {
 
     &:hover {
       width: 50px;
-      height: 50px;
       font-size: 16px;
       opacity: 1;
       @include useTheme {
@@ -294,7 +318,7 @@ const linkTo = (path: string) => {
     position: absolute;
     right: 0;
     width: 20px;
-    height: 80px;
+    height: 60px;
     font-size: 8px;
     border-radius: 50px 0 0 50px;
     display: flex;
@@ -312,7 +336,6 @@ const linkTo = (path: string) => {
 
     &:hover {
       width: 50px;
-      height: 50px;
       font-size: 16px;
       opacity: 1;
       @include useTheme {

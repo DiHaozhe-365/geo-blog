@@ -70,6 +70,7 @@ const systemStore = useSystemStore()
     background: var(--geo-card-bg-70);
     outline: 1px solid var(--geo-card-border);
   }
+
   .header-content {
     max-width: 1400px;
     width: 100%;
@@ -78,10 +79,12 @@ const systemStore = useSystemStore()
     justify-content: space-between;
     align-items: center;
     padding: 0 3rem;
+
     .header-left {
       display: flex;
       justify-content: center;
       align-items: center;
+
       img {
         height: 20px;
         user-select: none;
@@ -91,10 +94,12 @@ const systemStore = useSystemStore()
         -khtml-user-select: none;
       }
     }
+
     .header-middle {
       display: flex;
       justify-content: center;
       align-items: center;
+
       .header-middle-item {
         display: flex;
         justify-content: center;
@@ -107,25 +112,30 @@ const systemStore = useSystemStore()
         transition: 0.3s;
         cursor: pointer;
         background: none;
+        white-space: nowrap;
         @include useTheme {
           font-weight: 500;
           color: var(--geo-font-color);
         }
+
         &:hover {
           @include useTheme {
             color: var(--geo-font-color-hover);
             background: var(--geo-theme);
           }
         }
+
         &:active {
           transform: scale(95%);
         }
       }
     }
+
     .header-right {
       display: flex;
       justify-content: center;
       align-items: center;
+
       .header-right-item {
         display: flex;
         justify-content: center;
@@ -135,6 +145,7 @@ const systemStore = useSystemStore()
         user-select: none;
         transition: 0.3s;
         cursor: pointer;
+
         &:hover {
           @include useTheme {
             background: var(--geo-card-border);

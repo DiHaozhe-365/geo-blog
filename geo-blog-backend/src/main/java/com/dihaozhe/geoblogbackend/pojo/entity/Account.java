@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -42,6 +43,21 @@ public class Account implements Serializable {
      * 角色
      */
     private String role;
+
+    /**
+     * 昵称
+     */
+    private String nickname;
+
+    /**
+     * 头像
+     */
+    private String avatar;
+
+    /**
+     * 余额
+     */
+    private BigDecimal money;
 
     /**
      * 创建时间

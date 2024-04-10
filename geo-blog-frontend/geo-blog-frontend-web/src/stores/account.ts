@@ -11,11 +11,13 @@ export const useAccountStore = defineStore(
     return { username, role, token, expire }
   },
   {
-    persist: true
+    persist: {
+      storage: sessionStorage
+    }
   }
 )
 
-// 清除本地Account登录状态钩子
+// 清除本地所有空间Account登录状态
 export const useRemoveAccount = () => {
   const accountStore = useAccountStore()
   accountStore.username = ''
