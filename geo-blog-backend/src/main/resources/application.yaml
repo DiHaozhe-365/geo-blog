@@ -20,6 +20,15 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+  mail:
+    host: smtp.163.com
+    username: dihaozhe365@163.com
+    password: KVVCXKVWIRWXKYGG
+  rabbitmq:
+      addresses: localhost
+      username: admin
+      password: admin
+      virtual-host: /
 #SQL 日志
 mybatis-plus:
   configuration:
