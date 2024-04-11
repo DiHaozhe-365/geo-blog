@@ -4,6 +4,7 @@ import { useSystemStore } from '@/stores/system'
 import Header from '@/components/common/Header.vue'
 import Footer from '@/components/common/Footer.vue'
 import Demo from '@/components/demo/Demo.vue'
+import ChangeTheme from '@/components/common/ChangeTheme.vue'
 
 // 获取网站当前主题，如果为空则设置默认系统主题
 const systemStore = useSystemStore()
@@ -26,6 +27,7 @@ document.getElementsByTagName('html')[0].dataset.theme = systemStore.theme
     <div class="content-wrapper">
       <div class="content">
         <RouterView />
+        <ChangeTheme></ChangeTheme>
       </div>
     </div>
     <Footer></Footer>

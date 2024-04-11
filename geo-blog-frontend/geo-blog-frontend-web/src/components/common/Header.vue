@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useSystemStore } from '@/stores/system'
-import { useChangeTheme } from '@/hooks/useChangeTheme'
 import { RouterLink } from 'vue-router'
+import { UserOutlined } from '@ant-design/icons-vue'
 
 const systemStore = useSystemStore()
 </script>
@@ -32,19 +32,12 @@ const systemStore = useSystemStore()
         <RouterLink class="header-middle-item" to="/about">关于</RouterLink>
       </nav>
       <div class="header-right">
-        <div
-          class="header-right-item"
-          v-if="systemStore.theme === 'light'"
-          @click="useChangeTheme('dark')"
-        >
-          <img src="@/assets/images/svg/change-theme-light.svg" alt="Change Theme Light" />
-        </div>
-        <div
-          class="header-right-item"
-          v-if="systemStore.theme === 'dark'"
-          @click="useChangeTheme('light')"
-        >
-          <img src="@/assets/images/svg/change-theme-dark.svg" alt="Change Theme Dark" />
+        <div class="header-right-item">
+          <a-avatar :size="32">
+            <template #icon>
+              <UserOutlined />
+            </template>
+          </a-avatar>
         </div>
       </div>
     </div>
