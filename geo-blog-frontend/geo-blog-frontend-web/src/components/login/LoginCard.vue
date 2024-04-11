@@ -48,7 +48,7 @@ const handleLogin = async () => {
             <a-checkbox class="checkbox" v-model:checked="loginForm.remember" />
             <span>记住我</span>
           </div>
-          <a class="register" @click="router.push('/register')">注册账号</a>
+          <a class="forget-password" @click="router.push('/forget-password')">忘记密码</a>
         </div>
       </a-form-item>
 
@@ -57,6 +57,7 @@ const handleLogin = async () => {
           <a-button type="primary" html-type="submit" class="login-form-button">
             立即登录
           </a-button>
+          <a-button type="default" @click="router.push('/register')"> 注册账号</a-button>
         </div>
       </a-form-item>
     </a-form>
@@ -68,7 +69,7 @@ const handleLogin = async () => {
 
 .login-card {
   min-width: 390px;
-  padding: 60px 30px 20px 30px;
+  padding: 50px 20px 40px 20px;
   width: 100%;
   border-radius: var(--geo-card-border-radius);
   display: flex;
@@ -130,24 +131,12 @@ const handleLogin = async () => {
       width: 100%;
       display: flex;
       flex-direction: column;
+      gap: 10px;
 
       button {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 8px 10px;
-        border: none;
-        border-radius: 6px;
-        user-select: none;
-        text-decoration: none;
-        transition: 0.3s;
-        cursor: pointer;
-        margin-bottom: 10px;
-        @include useTheme {
-          font-weight: 500;
-          color: var(--geo-font-color-hover);
-          background: var(--geo-theme);
-        }
 
         &:active {
           transform: scale(98%);

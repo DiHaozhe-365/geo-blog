@@ -104,7 +104,6 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         account.setEmail(email);
         account.setPassword(password);
         account.setRole("普通用户");
-        account.setNickname(emailRegisterVO.getNickname());
         if (this.save(account)) {
             stringRedisTemplate.delete(key);
             return null;

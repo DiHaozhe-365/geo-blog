@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { askVerifyCode, register } from '@/api'
-import { LockOutlined, MailOutlined, SmileOutlined, UserOutlined } from '@ant-design/icons-vue'
+import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons-vue'
 import { message } from 'ant-design-vue'
 import router from '@/router'
 
@@ -10,7 +10,6 @@ interface RegisterForm {
   email: string
   password: string
   confirmPassword: string
-  nickname: string
   code: string
 }
 
@@ -19,7 +18,6 @@ const registerForm = ref<RegisterForm>({
   email: '',
   password: '',
   confirmPassword: '',
-  nickname: '',
   code: ''
 })
 
@@ -109,14 +107,6 @@ const handleRegister = async () => {
         </a-input-password>
       </a-form-item>
 
-      <a-form-item name="nickname" :rules="[{ required: true, message: '昵称不能为空!' }]">
-        <a-input v-model:value="registerForm.nickname" placeholder="请输入昵称" max="20">
-          <template #prefix>
-            <SmileOutlined />
-          </template>
-        </a-input>
-      </a-form-item>
-
       <a-form-item name="email" :rules="[{ required: true, message: '电子邮箱不能为空!' }]">
         <a-input v-model:value="registerForm.email" placeholder="请输入电子邮箱" max="28">
           <template #prefix>
@@ -162,7 +152,7 @@ const handleRegister = async () => {
 
 .register-card {
   min-width: 390px;
-  padding: 60px 30px 30px 30px;
+  padding: 50px 20px 40px 20px;
   width: 100%;
   border-radius: var(--geo-card-border-radius);
   display: flex;

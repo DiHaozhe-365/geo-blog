@@ -18,9 +18,6 @@ public class EmailRegisterVO {
     @Length(min = 6, max = 20)
     private String password;
 
-    @Length(min = 1, max = 20)
-    private String nickname;
-
     @Length(min = 6, max = 6)
     private String code;
 

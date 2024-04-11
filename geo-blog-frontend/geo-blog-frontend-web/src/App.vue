@@ -19,7 +19,7 @@ document.getElementsByTagName('html')[0].dataset.theme = systemStore.theme
   <a-config-provider
     :theme="{
       token: {
-        colorPrimary: systemStore.theme === 'light' ? 'rgb(0, 122, 255)' : 'rgb(255, 216, 89)'
+        colorPrimary: systemStore.theme === 'light' ? 'rgb(0, 122, 255)' : 'rgb(252,193,48)'
       }
     }"
   >

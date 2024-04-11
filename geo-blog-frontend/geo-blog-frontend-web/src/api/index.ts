@@ -59,7 +59,6 @@ export interface RegisterParams {
   username: string
   email: string
   password: string
-  nickname: string
   code: string
 }
 
