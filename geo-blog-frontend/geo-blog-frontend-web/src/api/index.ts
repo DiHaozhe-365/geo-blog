@@ -2,6 +2,7 @@
 import request from '@/utils/request'
 import { message } from 'ant-design-vue'
 import { useAccountStore, useRemoveAccount } from '@/stores/account'
+import router from '@/router'
 
 export interface Response {
   code: number
@@ -64,9 +65,14 @@ export interface RegisterParams {
 
 export const register = async (params: RegisterParams) => {
   try {
-    const response = await request.post('/api/auth/register', JSON.stringify(params))
+    const headers = {
+      // 指定请求头
+      'Content-Type': 'application/json'
+    }
+    const response = await request.post('/api/auth/register', params, headers)
     if (response.code === 200) {
       message.success('注册成功')
+      router.push('/login')
     } else {
       defaultWarning(response)
     }
@@ -149,11 +155,6 @@ export const logout = async () => {
 export const getAccountList = async () => {
   try {
     const response = await request.get('/api/account/list')
-    if (response.code === 200) {
-      console.log('请求成功')
-    } else {
-      message.warning(response.message)
-    }
     return response
   } catch (error: any) {
     defaultError()

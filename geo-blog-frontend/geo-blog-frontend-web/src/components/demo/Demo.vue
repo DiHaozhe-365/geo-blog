@@ -27,7 +27,7 @@ async function handleVerifyCode() {
 async function handleRegister() {
   await register({
     username: 'test',
-    email: '1839279043',
+    email: '1839279043@qq.com',
     password: '123456',
     nickname: '邸浩哲',
     code: '11'
@@ -53,8 +53,8 @@ async function handleRegister() {
   position: absolute;
   top: 50%;
   left: 50%;
-  display: none;
   display: block;
+  display: none;
 }
 
 button {

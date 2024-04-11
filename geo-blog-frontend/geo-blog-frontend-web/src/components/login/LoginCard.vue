@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { login } from '@/api'
 import { LockOutlined, UserOutlined } from '@ant-design/icons-vue'
+import router from '@/router'
 
 interface LoginForm {
   username: string
@@ -47,7 +48,7 @@ const handleLogin = async () => {
             <a-checkbox class="checkbox" v-model:checked="loginForm.remember" />
             <span>记住我</span>
           </div>
-          <a class="register" href="">注册账号</a>
+          <a class="register" @click="router.push('/register')">注册账号</a>
         </div>
       </a-form-item>
 
@@ -67,7 +68,7 @@ const handleLogin = async () => {
 
 .login-card {
   min-width: 390px;
-  padding: 60px 30px 30px 30px;
+  padding: 60px 30px 20px 30px;
   width: 100%;
   border-radius: var(--geo-card-border-radius);
   display: flex;
@@ -75,7 +76,6 @@ const handleLogin = async () => {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  animation: slidein 0.6s 0.1s ease;
   @include useTheme {
     background: var(--geo-card-bg);
     border: 1px solid var(--geo-card-border);

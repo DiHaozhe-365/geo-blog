@@ -1,7 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import RegisterCard from '@/components/register/RegisterCard.vue'
+</script>
 
 <template>
-  <div class="register"></div>
+  <div class="register">
+    <RegisterCard></RegisterCard>
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -59,7 +59,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
                 .eq("phone",text).or()
                 .eq("email",text)
                 .eq("status","正常")
-                .ne("is_deleted", 1)
+                .eq("is_deleted", 0)
                 .one();
     }
 

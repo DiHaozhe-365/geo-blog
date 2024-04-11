@@ -1,4 +1,3 @@
-// request.ts
 import type { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import config from '@/config'
@@ -42,8 +41,6 @@ class Request {
   }
 
   private handleRequestIntercept(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
-    // 修改请求头中的Content-Type为'application/x-www-form-urlencoded'
-    config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
     // 尝试从本地存储中获取Token信息
     const account: string =
       localStorage.getItem('account') ||
@@ -80,6 +77,7 @@ class Request {
   }
 
   public post(url: string, data?: any, headers?: any): Promise<Response> {
+    headers = { ...headers, 'Content-Type': 'application/x-www-form-urlencoded', ...headers }
     return this.request({
       url,
       method: 'post',
@@ -89,6 +87,7 @@ class Request {
   }
 
   public put(url: string, data?: any, headers?: any): Promise<Response> {
+    headers = { ...headers, 'Content-Type': 'application/x-www-form-urlencoded', ...headers }
     return this.request({
       url,
       method: 'put',
