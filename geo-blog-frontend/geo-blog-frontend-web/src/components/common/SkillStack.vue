@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
+
 const skills = ref([
   {
     id: 1,
@@ -66,19 +67,23 @@ const skills = ref([
 
 <style lang="scss" scoped>
 @import '@/assets/styles/theme';
+
 .skill-stack {
   display: flex;
   flex-direction: column;
   gap: 20px;
   animation: skillStackUp 70s infinite linear;
+
   .skill-pair {
     display: flex;
-    width: 320px;
+    width: 100%;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+
     .skill {
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       border-radius: 35px;
       background-color: #867412;
       display: flex;
@@ -88,6 +93,7 @@ const skills = ref([
       @include useTheme {
         background: var(--geo-smart-ball-bg) !important;
       }
+
       img {
         width: 60%;
         transform: translateY(0px);
@@ -98,6 +104,7 @@ const skills = ref([
         -khtml-user-select: none;
       }
     }
+
     :nth-child(odd) {
       transform: translateY(-20px);
     }

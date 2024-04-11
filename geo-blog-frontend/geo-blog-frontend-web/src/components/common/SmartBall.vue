@@ -14,12 +14,14 @@ const props = defineProps(['message'])
 
 <style lang="scss" scoped>
 @import '@/assets/styles/theme';
+
 .smart-ball {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
+
   .blue-ball {
     position: absolute;
     width: 50px;
@@ -28,29 +30,31 @@ const props = defineProps(['message'])
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: blueBall 0.8s ease forwards;
+    animation: blueBall 0.8s 0.1s ease forwards;
     @include useTheme {
       background: var(--geo-theme);
     }
   }
+
   .inner-ball {
     position: absolute;
     width: 52px;
     height: 52px;
     border-radius: 50%;
     backdrop-filter: blur(7px);
-    animation: innerBall 0.8s ease forwards;
+    animation: innerBall 0.8s 0.1s ease forwards;
     @include useTheme {
       background: var(--geo-smart-ball-bg);
       border: 1px solid var(--geo-card-border);
     }
   }
+
   .inner-ball-text {
     position: absolute;
     height: 52px;
     border-radius: 1000px;
     backdrop-filter: blur(7px);
-    animation: innerBallText 1.6s ease forwards;
+    animation: innerBallText 1.6s 0.1s ease forwards;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
@@ -63,15 +67,18 @@ const props = defineProps(['message'])
       border: 1px solid var(--geo-card-border);
       color: var(--geo-font-color);
     }
+
     &:hover {
       @include useTheme {
         color: var(--geo-font-color-hover);
         background: var(--geo-theme);
       }
     }
+
     &:active {
       transform: scale(95%);
     }
+
     span {
       margin: 0 10px;
       animation: innerBallTextSpan 1s ease forwards;
@@ -135,6 +142,7 @@ const props = defineProps(['message'])
     display: flex;
   }
 }
+
 @keyframes innerBallTextSpan {
   0% {
     opacity: 0;
