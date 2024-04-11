@@ -17,11 +17,64 @@ const defaultWarning = (response: Response) => {
   message.warning(response.message)
 }
 
-// 参数接口
-export interface LoginParams {
+/**
+ * 获取邮箱验证码接口
+ * @param {object} params AskVerifyCodeRequest
+ * @param {string} params.email
+ * @param {string} params.type
+ * @returns
+ */
+interface AskVerifyCodeParams {
+  email: string
+  type: 'register' | 'reset'
+}
+
+export const askVerifyCode = async (params: AskVerifyCodeParams) => {
+  try {
+    const response = await request.get('/api/auth/ask-code', params)
+    if (response.code === 200) {
+      message.success('验证码已发送至[' + params.email + ']，请注意查收')
+    } else {
+      defaultWarning(response)
+    }
+  } catch (error: any) {
+    defaultError()
+    console.log(error)
+    throw error
+  }
+}
+
+/**
+ * 注册接口
+ * @param {object} params RegisterRequest
+ * @param {string} params.username
+ * @param {string} params.email
+ * @param {string} params.password
+ * @param {string} params.confirmPaasword
+ * @param {string} params.code
+ * @returns
+ */
+export interface RegisterParams {
   username: string
+  email: string
   password: string
-  remember: boolean
+  nickname: string
+  code: string
+}
+
+export const register = async (params: RegisterParams) => {
+  try {
+    const response = await request.post('/api/auth/register', JSON.stringify(params))
+    if (response.code === 200) {
+      message.success('注册成功')
+    } else {
+      defaultWarning(response)
+    }
+  } catch (error: any) {
+    defaultError()
+    console.log(error)
+    throw error
+  }
 }
 
 /**
@@ -32,6 +85,12 @@ export interface LoginParams {
  * @param {boolean} params.remember
  * @returns
  */
+export interface LoginParams {
+  username: string
+  password: string
+  remember: boolean
+}
+
 export const login = async (params: LoginParams) => {
   try {
     const response = await request.post('/api/auth/login', params)

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { getAccountList, getHello, login, logout } from '@/api'
+import { askVerifyCode, getAccountList, getHello, login, logout, register } from '@/api'
 
 async function handleLogin() {
   await login({ username: 'admin', password: '123456', remember: false })
@@ -19,6 +19,20 @@ async function handleHello() {
   const response = await getHello()
   console.log(response)
 }
+
+async function handleVerifyCode() {
+  await askVerifyCode({ email: '1839279043@qq.com', type: 'register' })
+}
+
+async function handleRegister() {
+  await register({
+    username: 'test',
+    email: '1839279043',
+    password: '123456',
+    nickname: '邸浩哲',
+    code: '11'
+  })
+}
 </script>
 
 <template>
@@ -27,6 +41,8 @@ async function handleHello() {
     <button @click="handleLogout">退出登录</button>
     <button @click="handleList">获取列表</button>
     <button @click="handleHello">获取你好</button>
+    <button @click="handleVerifyCode">获取邮箱验证码</button>
+    <button @click="handleRegister">注 册</button>
   </div>
 </template>
 

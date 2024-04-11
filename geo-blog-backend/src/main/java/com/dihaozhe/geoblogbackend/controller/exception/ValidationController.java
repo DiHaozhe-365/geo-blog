@@ -13,7 +13,7 @@ public class ValidationController  {
     @ExceptionHandler(ValidationException.class)
     public Result<Void> validateException(ValidationException exception) {
         log.warn("Resolve [{}: {}]", exception.getClass().getName(), exception.getMessage());
-        return Result.failure(400, "请求参数有误");
+        return Result.failure(400, "邮箱格式错误");
     }
 
 }
