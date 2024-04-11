@@ -37,6 +37,7 @@ const bannerTitle = ref({
 @import '@/assets/styles/layout';
 
 .banner {
+  position: relative;
   max-width: 690px;
   min-width: 600px;
   width: 100%;

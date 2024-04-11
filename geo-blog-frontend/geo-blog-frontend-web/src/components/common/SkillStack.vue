@@ -73,6 +73,7 @@ const skills = ref([
   flex-direction: column;
   gap: 20px;
   animation: skillStackUp 70s infinite linear;
+  transition: 0.5s;
 
   .skill-pair {
     display: flex;
@@ -85,7 +86,6 @@ const skills = ref([
       width: 130px;
       height: 130px;
       border-radius: 35px;
-      background-color: #867412;
       display: flex;
       justify-content: center;
       align-items: center;

@@ -21,7 +21,7 @@ $themes: (
           // 输入框变量
                 --geo-input-bg: rgb(245, 246, 247),
           // SmartBall变量
-                --geo-smart-ball-bg: rgba(247, 247, 247, 0.7),
+                --geo-smart-ball-bg: rgba(230, 230, 232, 0.7),
                 --end: none
         ),
   // 深色模式
@@ -42,7 +42,7 @@ $themes: (
           // 输入框变量
                 --geo-input-bg: rgb(84, 85, 86),
           // SmartBall变量
-                --geo-smart-ball-bg: rgb(66 66 69 / 70%),
+                --geo-smart-ball-bg: rgba(66, 66, 69, 0.7),
                 --end: none
         )
 );
