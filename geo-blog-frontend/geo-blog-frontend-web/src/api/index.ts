@@ -163,15 +163,30 @@ export const getAccountList = async () => {
 }
 
 /**
- * 获取你好接口
- * @returns
+ * 下载图片
+ * @param {string} img
+ * @returns {Promise<string>} 临时URL
  */
-export const getHello = async () => {
+// 响应接口
+export interface DownloadImgRes {}
+
+/**
+ * 下载图片
+ * @param {string} img
+ * @returns {Promise<string>} url
+ */
+export async function downloadImg(img: string) {
   try {
-    return await request.get('/api/test/hello')
-  } catch (error: any) {
-    defaultError()
-    console.log(error)
-    throw error
+    const response = await request.get(`/api/img/download?img=${img}`)
+
+    // Create a blob URL for the binary data
+    const imageUrl = window.URL.createObjectURL(new Blob([response.data]))
+
+    console.log(imageUrl)
+
+    return imageUrl
+  } catch (error) {
+    console.error('Error downloading image:', error)
+    return null // or handle the error appropriately
   }
 }

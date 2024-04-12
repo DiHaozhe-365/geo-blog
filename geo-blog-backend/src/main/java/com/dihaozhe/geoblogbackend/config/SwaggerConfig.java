@@ -36,10 +36,10 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("HaoBlog 接口文档")
+                        .title("GeoBlog 接口文档")
                         .contact(new Contact()
                                 .name("邸浩哲"))
-                        .description( "HaoBlog 接口文档")
+                        .description( "GeoBlog 接口文档")
                         .version("1.0.0"));
     }
 

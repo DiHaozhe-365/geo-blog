@@ -7,6 +7,8 @@ import com.dihaozhe.geoblogbackend.service.AccountService;
 import com.dihaozhe.geoblogbackend.utils.JwtUtils;
 import com.dihaozhe.common.response.Result;
 import jakarta.annotation.Resource;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.BeanUtils;
@@ -21,6 +23,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,7 +44,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .authorizeHttpRequests(conf -> conf
-                        .requestMatchers("/api/auth/**", "/error").permitAll()
+                        .requestMatchers("/api/auth/**", "/error", "/doc.html", "/webjars/**", "/v2/**","/v3/**", "/swagger-resources/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(conf -> conf
