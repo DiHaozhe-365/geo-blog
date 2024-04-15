@@ -58,9 +58,8 @@ const systemStore = useSystemStore()
   justify-content: center;
   align-items: center;
   transition: 0.3s;
-  backdrop-filter: saturate(180%) blur(20px);
   @include useTheme {
-    background: var(--geo-card-bg-70);
+    background: var(--geo-card-bg);
     outline: 1px solid var(--geo-card-border);
   }
 
