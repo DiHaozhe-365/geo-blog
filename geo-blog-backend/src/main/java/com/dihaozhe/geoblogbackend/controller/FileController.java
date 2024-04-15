@@ -18,7 +18,7 @@ import java.io.IOException;
 @Slf4j
 @RestController
 @RequestMapping("/api")
-@Tag(name = "File", description = "文件相关接口")
+@Tag(name = "文件相关接口", description = "文件相关接口")
 public class FileController {
 
     @Value("${img.root}")

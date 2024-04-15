@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/account")
-@Tag(name = "Account", description = "账号相关接口")
+@Tag(name = "账号相关接口", description = "账号相关接口")
 public class AccountController {
 
     @Resource

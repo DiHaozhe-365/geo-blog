@@ -7,62 +7,36 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * (Account)实体类
+ * (PostTag)实体类
  *
  * @author 邸浩哲
  *
  */
+@TableName(value ="tb_post_tag")
 @Data
-@TableName("tb_account")
-public class Account implements Serializable {
+public class PostTag implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 1234676655605848537L;
+    private static final long serialVersionUID = 3564514095331118555L;
 
     /**
-     * 账号id
+     * 文章标签id
      */
     @TableId(type = IdType.AUTO)
     private Long id;
 
     /**
-     * 账号
+     * 文章id
      */
-    private String username;
+    private Long postId;
 
     /**
-     * 邮箱
+     * 标签id
      */
-    private String email;
-
-    /**
-     * 密码
-     */
-    private String password;
-
-    /**
-     * 角色
-     */
-    private String role;
-
-    /**
-     * 昵称
-     */
-    private String nickname;
-
-    /**
-     * 头像
-     */
-    private String avatar;
-
-    /**
-     * 余额
-     */
-    private BigDecimal money;
+    private Long tagId;
 
     /**
      * 创建时间

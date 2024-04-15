@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 @Validated
 @RestController
 @RequestMapping("/api/auth")
-@Tag(name = "Authorize", description = "授权相关接口")
+@Tag(name = "认证相关接口", description = "认证相关接口")
 public class AuthorizeController {
 
     @Resource

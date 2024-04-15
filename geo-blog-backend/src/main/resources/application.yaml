@@ -55,14 +55,13 @@ knife4j:
   enable: true
   basic:
     enable: true
-    # Basic认证用户名
     username: root
-    # Basic认证密码
     password: 123456
   setting:
     language: zh_cn
     enable-footer: false
     enable-footer-custom: true
+    swagger-model-name: 实体类列表
     footer-custom-content: MIT License Copyright (c) 2024 邸浩哲
 
 # springdoc-openapi 接口文档配置
@@ -73,7 +72,3 @@ springdoc:
     operations-sorter: alpha
   api-docs:
     path: /v3/api-docs
-  group-configs:
-    group: 'default'
-    paths-to-match: '/**'
-    packages-to-scan: com.dihaozhe.geoblogbackend.controller

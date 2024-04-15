@@ -10,6 +10,7 @@ public class GeoBlogBackendApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(GeoBlogBackendApplication.class, args);
+        System.out.println(" knife4j 接口文档访问 http://localhost:8090/doc.html");
     }
 
 }
